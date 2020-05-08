@@ -28,15 +28,53 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
-1. Explain how to build stateful class components.
+1 Explain how to build stateful class components
+There are several steps to follow in order to create a stateful class component. First we have to create a class (like a normal JS ES6 class), that extends ‘React.Component’.
 
-2. Describe the different phases of the component lifecycle.
+Then we must build a constructor() function, and this is where the state will be defined. Before that though, we must add a super() keyword that acts as the glue between the class component and the constructor, adding the new state  to it. State properties are set up in an object using the ‘this.state’ syntax, ‘this’ keyword referring to the current class being handled. To render stateful
+Class components to the DOM, it is mandatory to use the render() function that includes the return statement with the body of the class component. 
 
-3. Demonstrate an understanding of class component lifecycle methods.
 
-4. Define stateful logic.
 
-5. Describe how to test a React component with React Testing Library.
+
+2 Describe the different phases of the component lifecycle.
+Every component in React has what we call a lifecycle. The Lifecycle is a part of how our components operate under the hood.
+
+There are 3 phases of the component lifecycle. First we have the mounting phase, where the render method is invoked. Whatever initial data we want to access is defined in this phase. The method ‘componentDidMount’ is called here. 
+
+The next phase is the updating phase. Here data from initial state gets updated, making render to happen again. We use setState here to update state, and the ‘shouldComponentUpdate’ method to define what happens in case the update occurs.
+
+The final phase is the un-mounting phase, which makes the component to be removed from the screen once its purpose is over. The componentWillUnmount method is called here and is used as cleanup. 
+
+
+
+3 Demonstrate an understanding of class component lifecycle methods.
+
+This question was answered in the post part in the last question. There are three component lifecycle methods (used in classes only). 
+
+First the componentDidMount() method is invoked immediately after a component is mounted (inserted into the tree). Initialization that requires DOM nodes should go here. If you need to load data from a remote endpoint, this is a good place to instantiate the call (with axios perhaps). 
+
+componentDidUpdate() is invoked after updating occurs. State is updated in this phase and causes re-renders to happen each time state is updated. Here current props can also be compared to previous props using conditional logic. 
+componentWillUnmount() is invoked immediately before a component is unmounted and destroyed. It allows for cleaning up components  that are no longer used once their purpose is  fulfilled. 
+
+
+4 Define stateful logic.
+
+Stateful logic is any piece of code  that uses state. This is used mostly in hooks, and allows state to be passed around and reused in several components at the same  time. 
+
+
+5 Describe how to test a React component with React Testing Library.
+
+The first thing we must do when using react testing library is to create a simple test to see if  the library is working correctly. Normally we can just do a render(<App/>) test and this will suffice.
+
+The second step is to create the tests for the site or application. For example, if we wnt to test a form then we would have to make sure that all input fields can be filled and submitted.
+
+In this case, we need to target the correct elements, so we destructure by using one of  the react testing library tools such as ‘getByText’ or ‘getByPlaceholder’. Once the element has been targeted correctly, we save this in a variable and use the expect method by passing in the variable we want to test. An example would be to make sure the element we are targeting is part of the document. 
+
+Once all this is in place, we can add input values to the field as if we were a user, and we do  this by using the fireEvent method. We call the variable that we want to target, and then we set the value to whatever we want the test to use for  that case. 
+
+Once the fireEvent occurs, then we must once again use expect to ensure the test looks for the data after adding the values we set it to. If all is in place, the test will pass with no errors. Otherwise the  test will return a set of errors that explicitly label where the errors are to be fixed.
+
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
