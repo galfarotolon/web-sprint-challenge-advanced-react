@@ -34,6 +34,12 @@ function App() {
           <h1>
             React Plants <span role="img">🌿</span>
           </h1>
+          <div className="dark-mode__toggle">
+            <div
+              onClick={toggleMode}
+              className={darkMode ? 'toggle toggled' : 'toggle'}
+            />
+          </div>
           <ul className="steps">
             <li>
               <NavLink exact to="/">
@@ -49,12 +55,8 @@ function App() {
               </NavLink>
             </li>
           </ul>
-          <div className="dark-mode__toggle">
-            <div
-              onClick={toggleMode}
-              className={darkMode ? 'toggle toggled' : 'toggle'}
-            />
-          </div>
+
+
         </nav>
         <Route
           exact

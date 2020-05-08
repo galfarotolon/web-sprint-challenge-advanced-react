@@ -12,9 +12,9 @@ export const useDarkMode = () => {
         if (someValue) {
 
             document.querySelector('body').classList.add('dark-mode')
-            document.querySelector('h1').classList.add('dark-mode')
-            document.querySelector('h2').classList.add('dark-mode')
-            document.querySelector('form').classList.add('dark-mode')
+            // document.querySelector('h1').classList.add('dark-mode')
+            // document.querySelector('h2').classList.add('dark-mode')
+            // document.querySelector('form').classList.add('dark-mode')
 
 
 
@@ -22,9 +22,9 @@ export const useDarkMode = () => {
         } else {
 
             document.querySelector('body').classList.remove('dark-mode')
-            document.querySelector('h1').classList.remove('dark-mode')
-            document.querySelector('h2').classList.remove('dark-mode')
-            document.querySelector('form').classList.remove('dark-mode')
+            // document.querySelector('h1').classList.remove('dark-mode')
+            // document.querySelector('h2').classList.remove('dark-mode')
+            // document.querySelector('form').classList.remove('dark-mode')
 
 
 
